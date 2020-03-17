@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-10T10:14:42.733Z",
+    "end": "2020-03-10T10:16:14.216Z",
+    "duration": 91483,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5ede69f5-9fb3-4402-b829-d2c2fc3c5d94",
+      "title": "",
+      "fullFile": "cypress\\integration\\webshop\\Categories-Modules\\Categories.js",
+      "file": "cypress\\integration\\webshop\\Categories-Modules\\Categories.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "796b3ff6-b21b-4e5f-a2b2-4af15b139e5d",
+          "title": "Demo-WebShop Suit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GiftcardModule",
+              "fullTitle": "Demo-WebShop Suit GiftcardModule",
+              "timedOut": null,
+              "duration": 48174,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_GiftcardCode.Giftcard.PurchaseGiftcards(this.gdata);",
+              "err": {},
+              "uuid": "c2407ffb-db5c-4eae-b646-9c4db7cd403c",
+              "parentUUID": "796b3ff6-b21b-4e5f-a2b2-4af15b139e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "BooksModule",
+              "fullTitle": "Demo-WebShop Suit BooksModule",
+              "timedOut": null,
+              "duration": 19274,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_BooksCode.Books.PurchaseBooks(this.bdata);",
+              "err": {},
+              "uuid": "35f809e4-120f-4fa3-9af4-01af9b9c8231",
+              "parentUUID": "796b3ff6-b21b-4e5f-a2b2-4af15b139e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "ComputersModule",
+              "fullTitle": "Demo-WebShop Suit ComputersModule",
+              "timedOut": null,
+              "duration": 21005,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_ComputersCode.Computers.PurchaseComputers(this.cdata);",
+              "err": {},
+              "uuid": "7d876928-e080-4400-b290-55d602e83df5",
+              "parentUUID": "796b3ff6-b21b-4e5f-a2b2-4af15b139e5d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c2407ffb-db5c-4eae-b646-9c4db7cd403c",
+            "35f809e4-120f-4fa3-9af4-01af9b9c8231",
+            "7d876928-e080-4400-b290-55d602e83df5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 88453,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/webshop",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

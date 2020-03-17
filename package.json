@@ -1,0 +1,30 @@
+{
+  "name": "package.webshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/cypress run",
+    "Projectkey": "npm run test -- --record --key b2d0663e-3fff-4494-a846-886056cbf27d",
+    "headTest": "npm run Projectkey -- --headed",
+    "browser": "npm run headTest -- --browser chrome",
+    "reportview": "npm run browser -- --reporter mochawesome",
+    "ProductSuite": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/*\"",
+    "SingleSuit": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/Books.js\"",
+    "mochaHeadless": "npm run test --reporter mochawesome"
+  },
+  "author": "Senthil",
+  "license": "ISC",
+  
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cypress": "^4.1.0",
+    "cypress-cucumber-preprocessor": "^2.0.1",
+    "mocha": "^7.1.0",
+    "mochawesome": "^5.0.0"
+  },
+
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}

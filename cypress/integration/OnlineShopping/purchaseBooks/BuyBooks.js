@@ -5,13 +5,10 @@ Given('I am logged in to demowebshop',()=>{
     cy.visit('http://demowebshop.tricentis.com/');
 })
  
-When('I enter as a valid user and validate the user',(datatable)=>{
+When('I enter as a valid user and validate the user',()=>{
     cy.get('.ico-login').click()
-
-    datatable.hashes().forEach(element => {
-        cy.get('#Email').type(element.email)
-        cy.get('#Password').type(element.password)        
-    });
+    cy.get('#Email').type('boy@mail.com')
+    cy.get('#Password').type('Boy123')        
     cy.get('.button-1.login-button').click()    
 })
 
@@ -20,11 +17,12 @@ Then('Verify the logout is enabled', ()=>{
 })
 
 Given('I am selecting the product catalog',()=>{ 
+    cy.pause()
     cy.get('div.listbox').find('.inactive').contains('Books').click()
 })
 
-When('I find and add the product', (productName)=>{
-
+When('I find and add the product', ()=>{
+    cy.pause()
     cy.get('div.product-grid').find('div.details').each((prodT, index, $list) => {
         const strTitle = prodT.find('h2.product-title').text()
         if(strTitle.includes('Computing and Internet'))
@@ -43,7 +41,7 @@ Then('I Click on the addtoCart button', ()=>{
 })
  
 Given('I am clicking on the shipping cart',()=>{
- 
+ cy.pause()
     cy.get('.ico-cart').find('.cart-label').click()
 })
 

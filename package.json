@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/cypress run",
+    "cypress:open": "node_modules/.bin/cypress open",
     "Projectkey": "npm run test -- --record --key b2d0663e-3fff-4494-a846-886056cbf27d",
     "headTest": "npm run Projectkey -- --headed",
     "browser": "npm run headTest -- --browser chrome",

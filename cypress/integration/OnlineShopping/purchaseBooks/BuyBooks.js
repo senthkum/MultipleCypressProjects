@@ -1,14 +1,17 @@
 /// <reference types="Cypress" />
-import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
+import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
 
 Given('I am logged in to demowebshop',()=>{
     cy.visit('http://demowebshop.tricentis.com/');
 })
- 
-When('I enter as a valid user and validate the user',()=>{
+
+And('I click on signin', () =>{
     cy.get('.ico-login').click()
-    cy.get('#Email').type('boy@mail.com')
-    cy.get('#Password').type('Boy123')        
+})
+
+When(/^I enter a username "([^"]+)" and password "([^"]+)"$/,function(Username, Password){
+    cy.get('#Email').type(Username)
+    cy.get('#Password').type(Password)        
     cy.get('.button-1.login-button').click()    
 })
 
@@ -16,36 +19,43 @@ Then('Verify the logout is enabled', ()=>{
     cy.get('.ico-logout').should('have.text', 'Log out')
 })
 
-Given('I am selecting the product catalog',()=>{ 
-    cy.pause()
-    cy.get('div.listbox').find('.inactive').contains('Books').click()
+And(/^select the main product "([^"]+)" to purchase$/,(mainprod)=>{ 
+    cy.get('div.listbox').find('.inactive').contains(mainprod).click()
 })
 
-When('I find and add the product', ()=>{
-    cy.pause()
+And(/^select sub-product "([^"]+)" fromm the table$/, (subproduct)=>{
+
     cy.get('div.product-grid').find('div.details').each((prodT, index, $list) => {
         const strTitle = prodT.find('h2.product-title').text()
-        if(strTitle.includes('Computing and Internet'))
+        if(strTitle.includes(subproduct))
         {
             cy.get('input[value="Add to cart"]').eq(index).click()
-//add to cart
-              cy.get('.recipient-name').type('testing')
-              cy.get('.recipient-email').type('boy@mail.com')
-              cy.get('.message').type('message box')               
+            cy.wait(2000)
         }
     })
 })
 
-Then('I Click on the addtoCart button', ()=>{
-    cy.get('input[value="Add to cart"]').eq(index).click()   
+
+And(/^Enter the customer details "([^"]+)" and "([^"]+)" click on AddtoCart$/, (RecName, RecMail) =>{
+
+    cy.get('.recipient-name').type(RecName)
+    cy.get('.giftcard').then($input =>
+        {                    
+            if($input.find('.recipient-email').is(':visible'))
+            {
+                cy.get('.recipient-email').type(RecMail)
+            }
+        })
+    cy.get('.message').type('message box')
+    cy.get('input[value="Add to cart"]').eq(0).click()
+    cy.wait(1000)
 })
- 
-Given('I am clicking on the shipping cart',()=>{
- cy.pause()
+
+And('Clicking on the Shopping Cart link', ()=>{
     cy.get('.ico-cart').find('.cart-label').click()
 })
 
-When('I am validating the total price', ()=>{
+Then(/^Verify the product price and Quantity from the table "([^"]+)"$/, (subproduct)=>{
     cy.get('.cart').find('.cart-item-row').each((cart, index, $list) =>
     {
         cart.find('.remove-from-cart').find('input[type="checkbox"]').click()
@@ -56,11 +66,73 @@ When('I am validating the total price', ()=>{
         var TotPrice = (Price * Quantity)
         expect(Total).to.equals(TotPrice.toFixed(2))
         
-    })
+    })    
 })
-
-
-Then('I am checking out the product', ()=>{
+ 
+And('Click on Checkout button', ()=>{
     cy.get('[type="checkbox"]').check()
     cy.get('#checkout').click()
 })
+
+Then('Enter billing address to your orders', ()=>{
+    cy.get('#billing-address-select').select('tarun boy, asdf, asdf 3034, Australia').should('have.value', "1233919")
+    cy.get('#billing-buttons-container').find('input[title="Continue"]').click()
+    cy.wait(1000)
+})
+
+And('Enter Shipping Address', ()=>{
+    //Shipping address                       
+    cy.get('.tab-section.allow.active').then(butt =>
+    {
+        if(butt.find('.button-1.new-address-next-step-button').is(':visible'))
+        {
+            cy.get('.description i').should('have.text', 'Pick up your items at the store (put your store address here)') 
+            cy.get('#shipping-buttons-container > .button-1').click()
+        } 
+    })
+    cy.wait(1000)    
+})
+
+And('Select Shipping Method', ()=>{
+    cy.get('.tab-section.allow.active').then($bton => 
+    {
+        if ($bton.find('.button-1.shipping-method-next-step-button').is(':visible')) 
+        {
+            cy.get('#shipping-method-buttons-container > .button-1').click()
+        }  
+    })
+    cy.wait(1000)    
+})
+
+And('Select Payment Method', ()=>{
+    cy.get('#paymentmethod_0').click()
+    cy.get('#payment-method-buttons-container').find('input[value="Continue"]').click()    
+})
+
+And('Proceed with Payment Information', ()=>{
+    cy.get('td > p').should('have.text', 'You will pay by COD')
+    cy.get('#payment-info-buttons-container').find('input[value="Continue"]').click()    
+})
+
+And('Click on Confirm Order', () => {
+    cy.get('#confirm-order-buttons-container').find('input[value="Confirm"]').click()
+})
+
+
+Then('Verify the Order confirmation', () => {
+    
+    cy.get('div.title').find('strong').should('have.text', 'Your order has been successfully processed!')
+    cy.get('.details > :nth-child(1)').then(function(Onum)
+    {
+        cy.log(Onum.text())
+    })
+
+    // cy.get('.details > :nth-child(2)').then(function(Modifylink)
+    // {
+    //     cy.log(Modifylink.text())
+    // })
+    cy.get('div.buttons').find('input[value="Continue"]').click()        
+
+})
+
+

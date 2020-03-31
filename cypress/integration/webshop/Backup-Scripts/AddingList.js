@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+/// <reference types="cypress-iframe" />
+
+import 'cypress-iframe'
 
 describe('Testsuite', function()
 {

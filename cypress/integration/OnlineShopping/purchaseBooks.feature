@@ -1,12 +1,28 @@
-Feature: PurchaseBooks
-Login webshop and purchase Books.
+Feature: Purchase products Online
+Description:Login webshop and purchase Books.
 
-  Scenario: Buy books worth $10.
+  Scenario Outline: Purchase Categories <product> of <subproduct>
     Given I am logged in to demowebshop
-    When I enter as a valid user and validate the user
+    And I click on signin
+    When I enter a username "<Username>" and password "<Password>"
     Then Verify the logout is enabled
+    And select the main product "<product>" to purchase 
+    And select sub-product "<subproduct>" fromm the table
+    And Enter the customer details "<RecName>" and "<RecMail>" click on AddtoCart
+    And Clicking on the Shopping Cart link
+    Then Verify the product price and Quantity from the table "<subproduct>"
+    And Click on Checkout button
+    Then Enter billing address to your orders
+    And Enter Shipping Address
+    And Select Shipping Method
+    And Select Payment Method
+    And Proceed with Payment Information
+    And Click on Confirm Order
+    Then Verify the Order confirmation
+    
 
-  Scenario: Search for the product
-    Given I am selecting the product catalog
-    When I find and add the product
-    Then I Click on the addtoCart button
+Examples:
+|product    |Username     |Password|subproduct               |RecName   |RecMail      |
+|Gift Cards |boy@mail.com |Boy123  |$5 Virtual Gift Card     |testname  |test@mail.com|
+
+

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress run",
     "cypress:open": "node_modules/.bin/cypress open",
+
+    "test": "node_modules/.bin/cypress run",
     "Projectkey": "npm run test -- --record --key b2d0663e-3fff-4494-a846-886056cbf27d",
     "headTest": "npm run Projectkey -- --headed",
     "browser": "npm run headTest -- --browser chrome",
@@ -16,11 +17,11 @@
   },
   "author": "Senthil",
   "license": "ISC",
-  
   "devDependencies": {
     "chai": "^4.2.0",
-    "cypress": "^4.1.0",
+    "cypress": "^4.2.0",
     "cypress-cucumber-preprocessor": "^2.0.1",
+    "cypress-iframe": "^1.0.1",
     "mocha": "^7.1.0",
     "mochawesome": "^5.0.0"
   },

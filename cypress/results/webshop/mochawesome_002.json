@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-04-10T02:39:01.059Z",
+    "end": "2020-04-10T02:39:28.979Z",
+    "duration": 27920,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4ea68d2c-96e2-430e-bb84-a91eb711c6ed",
+      "title": "",
+      "fullFile": "cypress\\integration\\Flipkart\\purchaseproduct.feature",
+      "file": "cypress\\integration\\Flipkart\\purchaseproduct.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "872d0e3e-06c7-4405-be0d-1928a6a853a8",
+          "title": "Login to Flipkart portal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to Flipkart and verify.",
+              "fullTitle": "Login to Flipkart portal Login to Flipkart and verify.",
+              "timedOut": null,
+              "duration": 14185,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach(step => stepTest.call(this, state, step, rowData))\n  )\n  .then(() =>\n    resolveAndRunAfterHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: ':nth-child(3) > .dHGf8H > ._1jcwFN > :nth-child(1) > ._2aUbKa', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: ':nth-child(3) > .dHGf8H > ._1jcwFN > :nth-child(1) > ._2aUbKa', but never found it.\n    at cypressErr (https://www.flipkart.com/__cypress/runner/cypress_runner.js:138644:9)\n    at throwErr (https://www.flipkart.com/__cypress/runner/cypress_runner.js:138577:11)\n    at Object.throwErrByPath (https://www.flipkart.com/__cypress/runner/cypress_runner.js:138625:3)\n    at retry (https://www.flipkart.com/__cypress/runner/cypress_runner.js:132905:19)\n    at onFailFn (https://www.flipkart.com/__cypress/runner/cypress_runner.js:121122:16)\n    at tryCatcher (https://www.flipkart.com/__cypress/runner/cypress_runner.js:165465:23)\n    at Promise._settlePromiseFromHandler (https://www.flipkart.com/__cypress/runner/cypress_runner.js:163401:31)\n    at Promise._settlePromise (https://www.flipkart.com/__cypress/runner/cypress_runner.js:163458:18)\n    at Promise._settlePromise0 (https://www.flipkart.com/__cypress/runner/cypress_runner.js:163503:10)\n    at Promise._settlePromises (https://www.flipkart.com/__cypress/runner/cypress_runner.js:163578:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://www.flipkart.com/__cypress/runner/cypress_runner.js:160190:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://www.flipkart.com/__cypress/runner/cypress_runner.js:160200:10)\n    at Async.drainQueues (https://www.flipkart.com/__cypress/runner/cypress_runner.js:160074:14)",
+                "diff": null
+              },
+              "uuid": "9ad61317-e03e-42cc-a050-5e94be8bca92",
+              "parentUUID": "872d0e3e-06c7-4405-be0d-1928a6a853a8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9ad61317-e03e-42cc-a050-5e94be8bca92"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14185,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/webshop",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

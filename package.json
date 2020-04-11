@@ -11,9 +11,13 @@
     "headTest": "npm run Projectkey -- --headed",
     "browser": "npm run headTest -- --browser chrome",
     "reportview": "npm run browser -- --reporter mochawesome",
-    "ProductSuite": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/*\"",
-    "SingleSuit": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/Books.js\"",
-    "mochaHeadless": "npm run test --reporter mochawesome"
+    "runCategoriesModules": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/*\"",
+    "runBooks": "npm run reportview -- --spec \"./cypress/integration/webshop/Categories-Modules/Books.js\"",
+    "mochaHeadless": "npm run test --reporter mochawesome",
+
+    "runFlipkartProduct": "npm run reportview -- --spec \"./cypress/integration/Flipkart/purchaseproduct.feature\"",
+    "runOnlineShopping": "npm run test -- --spec \"./cypress/integration/OnlineShopping/purchaseBooks.feature\""
+
   },
   "author": "Senthil",
   "license": "ISC",

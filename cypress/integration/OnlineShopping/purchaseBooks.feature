@@ -1,4 +1,4 @@
-Feature: Purchase products Online
+Feature: Purchase Gift Card Online
 Description:Login webshop and purchase Books.
 
   Scenario Outline: Purchase Categories <product> of <subproduct>
@@ -24,5 +24,3 @@ Description:Login webshop and purchase Books.
 Examples:
 |product    |Username     |Password|subproduct               |RecName   |RecMail      |
 |Gift Cards |boy@mail.com |Boy123  |$5 Virtual Gift Card     |testname  |test@mail.com|
-
-

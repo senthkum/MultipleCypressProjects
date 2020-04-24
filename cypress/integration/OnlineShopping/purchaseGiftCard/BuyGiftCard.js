@@ -9,7 +9,7 @@ And('I click on signin', () =>{
     cy.get('.ico-login').click()
 })
 
-When(/^I enter a username "([^"]+)" and password "([^"]+)"$/,function(Username, Password){
+When(/^I enter a username "([^"]+)" and password "([^"]+)"$/, (Username, Password)=>{
     cy.get('#Email').type(Username)
     cy.get('#Password').type(Password)        
     cy.get('.button-1.login-button').click()    
@@ -19,7 +19,7 @@ Then('Verify the logout is enabled', ()=>{
     cy.get('.ico-logout').should('have.text', 'Log out')
 })
 
-And(/^select the main product "([^"]+)" to purchase$/,(mainprod)=>{ 
+And(/^select the main product "([^"]+)" to purchase$/, (mainprod)=>{ 
     cy.get('div.listbox').find('.inactive').contains(mainprod).click()
 })
 
@@ -104,14 +104,45 @@ And('Select Shipping Method', ()=>{
     cy.wait(1000)    
 })
 
-And('Select Payment Method', ()=>{
-    cy.get('#paymentmethod_0').click()
-    cy.get('#payment-method-buttons-container').find('input[value="Continue"]').click()    
+
+And(/^Select Payment Method "([^"]+)"$/, (mode)=>{
+    switch (mode)
+    {
+        case "COD":
+            cy.get('#paymentmethod_0').click()
+            break
+        case "MoneyOrder":
+            cy.get('#paymentmethod_1').click()
+            break
+        case "CreditCard":
+            cy.get('#paymentmethod_2').click()
+            break
+        case "PurchaseOrder":
+            cy.get('#paymentmethod_3').click()
+            break
+         default :
+
+    }
+
+    cy.get('#payment-method-buttons-container').find('input[value="Continue"]').click()            
 })
 
-And('Proceed with Payment Information', ()=>{
-    cy.get('td > p').should('have.text', 'You will pay by COD')
-    cy.get('#payment-info-buttons-container').find('input[value="Continue"]').click()    
+And(/^Proceed with Payment Information "([^"]+)"$/, (mode)=>{
+
+    switch (mode)
+    {
+        case "COD":
+            cy.get('td > p').should('have.text', 'You will pay by COD')
+            cy.get('#payment-info-buttons-container').find('input[value="Continue"]').click()            
+        case "MoneyOrder":
+
+        case "CreditCard":
+
+        case "PurchaseOrder":
+
+         default :
+
+    }
 })
 
 And('Click on Confirm Order', () => {

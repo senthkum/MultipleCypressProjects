@@ -7,7 +7,7 @@ describe('Demo-WebShop Suit', function()
     beforeEach(function GiftcardModule()
     {
 
-        cy.fixture('WebshopDatatable/Giftcard').then(function(Giftcarddata)
+        cy.fixture('WebshopDatatable/Giftcards').then(function(Giftcarddata)
         {
             this.gdata = Giftcarddata
         })

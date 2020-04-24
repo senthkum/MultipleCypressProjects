@@ -1,0 +1,39 @@
+{
+
+    "GiftCards": [
+        {
+            "url": "http://demowebshop.tricentis.com/",
+            "email": "boy@mail.com",
+            "password": "Boy123",
+            "categories": "Gift Cards",
+            "orderby": "Price: Low to High",
+            "pagesize": "4",
+            "viewmode": "List",
+            "productName": "$5 Virtual Gift Card"
+        },
+
+        {
+            "url": "http://demowebshop.tricentis.com/",
+            "email": "Rekha@mail.com",
+            "password": "Boy123",
+            "categories": "Gift Cards",
+            "orderby": "Price: Low to High",
+            "pagesize": "4",
+            "viewmode": "List",
+            "productName": "$5 Virtual Gift Card"
+        },
+
+        {
+            "url": "http://demowebshop.tricentis.com/",
+            "email": "Senthil@mail.com",
+            "password": "Boy123",
+            "categories": "Gift Cards",
+            "orderby": "Price: Low to High",
+            "pagesize": "4",
+            "viewmode": "List",
+            "productName": "$5 Virtual Gift Card"
+        }
+
+    ]
+
+}

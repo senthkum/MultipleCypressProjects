@@ -4,7 +4,7 @@ import loginPage from '../PageObject-webShop/loginPage'
 import homePage from '../PageObject-webShop/homePage'
 import addtocart from '../PageObject-webShop/addtoCart'
 import checkoutPage from '../PageObject-webShop/checkoutPage'
-import { weblocator } from '../../weblocator'
+import { weblocator } from '../weblocator'
 
 describe('GiftCard-Testsuite', function()
 {
@@ -29,6 +29,7 @@ describe('GiftCard-Testsuite', function()
 
         // Enter the login details
         objloginPage.loginLink().click()
+        cy.pause()
 
         objloginPage.getMailid().type(this.data.email)
         objloginPage.getPassword().type(this.data.password)
@@ -36,7 +37,7 @@ describe('GiftCard-Testsuite', function()
         
         this.data.productName.forEach(function (element)
         {
-            //select the CATEGORIES
+            // select the CATEGORIES
             cy.Clickonlink('Gift Cards')
             
             // Select the position

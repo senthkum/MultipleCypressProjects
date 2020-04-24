@@ -1,0 +1,27 @@
+{
+    "url": "http://demowebshop.tricentis.com/",
+    "email": "boy@mail.com",
+    "password": "Boy123",
+    "categories": "Gift Cards",
+    "orderby": "Price: Low to High",
+    "pagesize": "4",
+    "viewmode": "List",
+    "productName": ["$5 Virtual Gift Card", "$25 Virtual Gift Card"],
+    "customerName": "",
+    "customerMailid": "",
+    "message": "",
+    "paymentmethod": "",
+    "country": "",
+    "city": "",
+    "address1": "",
+    "address2": "",
+    "postCode": "",
+    "phoneNumber": "",
+    "poNumber": "",
+    "cardType": "",
+    "cardholderName": "",
+    "CardNumber": "",
+    "ExpirationDate": "",
+    "CardCode": ""
+ }
+

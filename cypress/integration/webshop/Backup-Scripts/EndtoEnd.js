@@ -14,8 +14,6 @@ describe('Testsuite', function()
 
     it('AddingGiftCards', function()
     {
-        beforeEach(this.data)
-
         //Launch the url
         cy.visit('http://demowebshop.tricentis.com/')
 

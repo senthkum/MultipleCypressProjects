@@ -1,6 +1,7 @@
 {
     "defaultCommandTimeout": 4000,
-    "pageLoadTimeout": 60000,  
+    "pageLoadTimeout": 60000, 
+
     "Environments": {
       "L-Env": "http://demowebshop.tricentis.com/"
     },

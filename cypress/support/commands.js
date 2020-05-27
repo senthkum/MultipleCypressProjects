@@ -8,7 +8,9 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-import {weblocator} from '../integration/webshop/weblocator'
+
+import {weblocator} from '../integration/weblocator'
+
 
 Cypress.Commands.add('Clickonlink', (label) => 
 { 
@@ -49,17 +51,25 @@ Cypress.Commands.add('CategoriesGrid', (CategoriesName, receiptName, txtmessage)
         {
             cy.get('input[value="Add to cart"]').eq(index).click()
 
-            // Enter the customer details
-            cy.get('.recipient-name').type(receiptName)
-            cy.get('.message').type(txtmessage)
+            // Enter the customer details            
             cy.get('.giftcard').then($input =>
-                {                    
+                {          
+                    if($input.find('.recipient-name').is(':visible'))
+                    {
+                        cy.get('.recipient-name').type(receiptName)
+                    }
+
+                    if($input.find('.message').is(':visible'))
+                    {
+                        cy.get('.message').type(txtmessage)            
+                    }
+
                     if($input.find('.recipient-email').is(':visible'))
                     {
                         cy.get('.recipient-email').type('adsa@mail.com')
                     }
                 })
-            cy.get('.button-1.add-to-cart-button').click()
+            cy.get('.add-to-cart-button[value="Add to cart"]').click()
         }
     }) 
 
@@ -70,9 +80,6 @@ Cypress.Commands.add('SelectProduct', (CategoriesName) =>
 { 
     cy.get('div.product-grid').find('div.details').each((ProdN, index, $list) =>{
         const ProdName = ProdN.find('h2.product-title').text()
-        // cy.log(ProdName)
-        cy.log(CategoriesName)
-
         if(ProdName.includes(CategoriesName))
         {
             // .product-box-add-to-cart-button
@@ -130,7 +137,23 @@ Cypress.Commands.add('Shippingmethod', () =>
     })
 })
 
-
+Cypress.Commands.add('ClickonTopMenu', (MainMenu, SubMenu)=>
+{
+    cy.get('ul.top-menu > li > a').each((menuItem, index, $list) =>{
+        const menuName = menuItem.text()
+        if(menuName.includes(MainMenu))
+        {                
+            if(SubMenu === "")
+            {
+                cy.get('ul.top-menu > li > a').eq(index).click()
+            }
+            else{
+                cy.get('ul.top-menu > li > a').eq(index).trigger('mouseover')
+                cy.contains(SubMenu).click({force: true})
+            }
+        }
+    })
+})
 
 
 

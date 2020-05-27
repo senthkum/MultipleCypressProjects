@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-05-27T08:24:37.076Z",
+    "end": "2020-05-27T08:24:55.621Z",
+    "duration": 18545,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a53b1d52-4642-4beb-916b-84dcf9c379cb",
+      "title": "",
+      "fullFile": "cypress\\integration\\WebShop-SimpleFramework\\PractiseScripts\\sample.js",
+      "file": "cypress\\integration\\WebShop-SimpleFramework\\PractiseScripts\\sample.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1b242c7d-072b-49f2-834e-0c5f08eb8a8e",
+          "title": "MochaReporter Suit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Launch App 1",
+              "fullTitle": "MochaReporter Suit Launch App 1",
+              "timedOut": null,
+              "duration": 6541,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Launch the url\ncy.visit('http://demowebshop.tricentis.com/');\ncy.clearCookies(); // Enter the login details\ncy.get('.ico-login').click();\ncy.get('#Email').type('boy@mail.com');\ncy.get('#Password').type('Boy123');\ncy.get('.button-1.login-button').click();",
+              "err": {},
+              "uuid": "04e73515-2aa0-4b97-a864-d63daf8dd643",
+              "parentUUID": "1b242c7d-072b-49f2-834e-0c5f08eb8a8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Launch App 2",
+              "fullTitle": "MochaReporter Suit Launch App 2",
+              "timedOut": null,
+              "duration": 4425,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Launch the url\ncy.visit('http://demowebshop.tricentis.com/');\ncy.clearCookies(); // Enter the login details\ncy.get('.ico-login').click();\ncy.get('#Email').type('boy@mail.com');\ncy.get('#Password').type('Boy123');\ncy.get('.button-1.login-button').click();",
+              "err": {},
+              "uuid": "bec86627-f3c6-445a-8dc9-92003cbba20d",
+              "parentUUID": "1b242c7d-072b-49f2-834e-0c5f08eb8a8e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Launch App 3",
+              "fullTitle": "MochaReporter Suit Launch App 3",
+              "timedOut": null,
+              "duration": 3629,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Launch the url\ncy.visit('http://demowebshop.tricentis.com/');\ncy.clearCookies(); // Enter the login details\ncy.get('.ico-login').click();\ncy.get('#Email').type('boy@mail.com');\ncy.get('#Password').type('Boy123');\ncy.get('.button-1.login-button').click();",
+              "err": {},
+              "uuid": "dee583f4-9805-4574-b077-704ece3a5454",
+              "parentUUID": "1b242c7d-072b-49f2-834e-0c5f08eb8a8e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04e73515-2aa0-4b97-a864-d63daf8dd643",
+            "bec86627-f3c6-445a-8dc9-92003cbba20d",
+            "dee583f4-9805-4574-b077-704ece3a5454"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14595,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/webshop",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

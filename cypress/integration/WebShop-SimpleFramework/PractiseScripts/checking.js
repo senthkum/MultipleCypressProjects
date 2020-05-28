@@ -28,6 +28,7 @@ describe('MochaReporter Suit', function()
         cy.get('#Email').type('boy@mail.com')
         cy.get('#Password').type('Boy123')
         cy.get('.button-1.login-button').click()
+
     })
 
     it('Launch App 3', function()

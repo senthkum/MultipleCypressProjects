@@ -9,9 +9,10 @@
     "runHeaded": "npm run test -- --headed",
     "EndtoEnd": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/EndtoEnd.js\"",
     "sample": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/sample.js\"",
+    "checking": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/checking.js\"",
     "runBooks": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-PageObjectFramework/DriverScripts/Books.js\""
   },
-  
+
   "repository": {
     "type": "git",
     "url": "https://github.com/senthkum/MultipleCypressProjects.git"

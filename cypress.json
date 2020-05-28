@@ -1,21 +1,15 @@
 {
-    "defaultCommandTimeout": 4000,
-    "pageLoadTimeout": 60000, 
-
-    "Environments": {
-      "L-Env": "http://demowebshop.tricentis.com/"
-    },
-
-    "projectId": "8otqtz",
-
-    "reporter": "mochawesome",
-    "reporterOptions": {
+  "defaultCommandTimeout": 4000,
+  "pageLoadTimeout": 60000,
+  "Environments": {
+    "L-Env": "http://demowebshop.tricentis.com/"
+  },
+  "projectId": "x71vg8",
+  "reporter": "mochawesome",
+  "reporterOptions": {
     "reportDir": "cypress/results/webshop",
     "overwrite": false,
     "html": true,
     "json": true
-    }
-
   }
-  
-  
+}

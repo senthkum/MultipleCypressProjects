@@ -9,8 +9,10 @@
     "runHeaded": "npm run test -- --headed",
     "EndtoEnd": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/EndtoEnd.js\"",
     "sample": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/sample.js\"",
-    "checking": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/checking.js\"",
-    "runBooks": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-PageObjectFramework/DriverScripts/Books.js\""
+    "runBooks": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-PageObjectFramework/DriverScripts/Books.js\"",
+
+    "ShakeOut": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/shakeout-scripts\""
+    
   },
   "repository": {
     "type": "git",

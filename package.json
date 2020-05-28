@@ -11,7 +11,7 @@
     "sample": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/PractiseScripts/sample.js\"",
     "runBooks": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-PageObjectFramework/DriverScripts/Books.js\"",
 
-    "ShakeOut": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/shakeout-scripts\""
+    "ShakeOut": "npm run runHeaded -- --spec \"./cypress/integration/WebShop-SimpleFramework/shakeout-scripts/*\""
     
   },
   "repository": {

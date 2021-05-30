@@ -15,7 +15,7 @@ When('I enter the valid username and password',()=>{
 })
 
 Then('Verify the logout is enabled',()=>{
-    cy.get(':nth-child(3) > .dHGf8H > ._1jcwFN > :nth-child(1) > ._2aUbKa').should('have.text', 'senthil')
+    cy.get(':nth-child(3) > .dHGf8H > ._1jcwFN > :nth-child(1) > ._2aUbKa').should('have.text', 'senthil kumar')
 
 })
 
